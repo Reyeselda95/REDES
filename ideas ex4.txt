@@ -1,0 +1,34 @@
+Han salido las típicas preguntas de ACL, diseñar una y decir si tal paquete pasaba por una que te dan, 
+y luego preguntas de RIP....capturar tramas con el WS, alguna de teoría de RIP tb y 
+de meterte en routers ciscos para ver sus tablas, y qué mensajes RIP enviarían a sus vecinos.
+
+---------
+
+-¿Que direcciones IP y MAC tienes los pauetes RIP que
+envia el router cisco 1720 para la red 172.20.43.192/26?
+
+ IP origen(en formato A.B.C.D): 172.20.43.230
+ IP destino(en formato A.B.C.D): 224.0.0.9 
+ MAC origen(en formato A.B.C.D): 00:07:0e:8c:8c:ff
+ MAC destino(en formato A.B.C.D): 01:00:5e:00:00:09
+
+ ¿Que relaciones tienen las dos direcciones destino?
+ Ambas son direcciones de broadcast de la red local.
+
+---------
+
+-¿Que lista de acceso(ACL) del router cisco 2513 define las direccions de los paquetes IP
+ internos a los que se tiene que aplicar NAT inside para salir por el interfaz externo Ethernet 0
+ (numero entero que identifica la lista)?
+
+ 106
+
+ ¿Que direccion origen deben tener esos paquetes?
+ cualquiera(any)
+
+ ¿Que direccion destino deben tener esos paquetes?
+ 172.20.41.224/28
+
+---------
+
+

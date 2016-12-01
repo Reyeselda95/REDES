@@ -1,0 +1,115 @@
+Router(config)# access-list 101 remark Criterios para marcar precedencia 1
+Router(config)# access-list 101 permit ip host 193.145.232.131 host 10.1.3.3
+Router(config)# access-list 101 deny udp any 10.1.0.0 0.0.255.255 eq 80
+Router(config)# access-list 101 permit ip host 193.145.232.132 host 10.1.2.2
+
+
+
+Router(config)# access-list 101 permit ip host 193.145.232.131 host 10.1.3.3
+permite los paquetes de 193.145.232.131 a 10.1.3.3
+
+
+
+Se quiere permitir, únicamente, el tráfico a los paquetes tcp dirigidos a una web 
+y procedentes de la red 172.16.6.0/24 mediante una ACL extendida, 
+entonces habrá que escribir la siguiente sentencia:
+
+ d) access-list 114 permit tcp 172.16.6.0 0.0.0.255 any eq www 
+
+
+
+Se quiere denegar, únicamente, el tráfico a los paquetes procedentes de la dirección IP 172.16.1.1 perteneciente a la red 172.16.0.0/16 mediante 
+una ACL estandar, entonces habrá que escribir la siguiente sentencia:
+
+ a) access-list 2 deny 172.16.1.1 
+
+
+
+En una topología de red donde la ACL se quiere que haga de firewall, ¿qué router es más interesante que configure una ACL?
+
+ c) Un router exterior que proporciona acceso a Internet 
+
+
+
+La aplicación de un comando de NAT en un router Cisco está asociada a la ACL 106. 
+Si se desea que se aplique el comando a todos los paquetes, 
+excepto a los dirigidos a una dirección de la red 172.20.0.0 / 16, ¿Qué configuración de ACL es la válida?
+
+ a) Hacen falta dos reglas: access-list 106 deny ip any 172.20.0.0 0.0.255.255 / access-list 106 permit ip any any 
+
+
+
+¿Qué métrica utiliza RIP para determinar la ruta óptima para el enrutamiento de paquetes IP?
+ b) Número de saltos 
+
+
+
+¿Cuál de las siguientes afirmaciones es cierta respecto al encapsulamiento de paquetes RIP Response?
+
+ a) Se emplean paquetes IP de multicast que encapsulan un paquete UDP dirigido al puerto 520. 
+
+
+Para comprobar si RIP está activado en la configuración de un router CISCO se pueden utilizar varios comandos. 
+Entre los comandos que ya se comentaron en la práctica 3 sesión 1, destacan los siguientes:
+
+Comando para obtener información de protocolos activos
+ primero nos vamos al linnux 2 con telnet:
+	- stdprac 1601 rutas 
+
+ 
+Comando para obtener información de la tabla de actualizaciones RIP realizadas
+ stdprac 1601 rip 
+
+
+Realiza una captura (de al menos 30 segundos) con el monitor de red para localizar mensajes RIPv2 en el segmento Ethernet 172.20.43.192/26. 
+Averigua de quien proceden los mensajes RIP capturados. 
+
+ b) Cisco 1720 y Cisco 1601 
+
+
+
+Comprobar si en la tabla de encaminamiento del router Cisco 1601 hay alguna entrada dinámica generada por RIP. En base a ello, 
+¿se puede afirmar que el router Cisco 2513 está enviando paquetes RIP?
+
+ a) Si, está indicada por el flag R 
+
+
+
+Se quiere saber con qué protocolo de encaminamiento dinámico se configuró el router CISCO1601, ¿qué estructura de comando debe utilizarse?
+
+ c) stdprac 1601 conf (show conf)
+
+
+Comando para obtener información de rutas dinámicas
+ 
+ stdprac 1601 rutas  
+
+
+
+Comando para obtener información de los interfaces que utilizan EIGRP
+ 
+stdprac 1601 eintf 
+
+-¿Que direcciones IP y MAC tienes los pauetes RIP que
+envia el router cisco 1720 para la red 172.20.43.192/26?
+
+IP origen(en formato A.B.C.D): 172.20.43.230
+IP destino(en formato A.B.C.D): 224.0.0.9 
+MAC origen(en formato A.B.C.D): 00:07:0e:8c:8c:ff
+MAC destino(en formato A.B.C.D): 01:00:5e:00:00:09
+
+¿Que relaciones tienen las dos direcciones destino?
+Ambas son direcciones de broadcast de la red local.
+
+-¿Que lista de acceso(ACL) del router cisco 2513 define las direccions de los paquetes IP
+internos a los que se tiene que aplicar NAT inside para salir por el interfaz externo Ethernet 0
+(numero entero que identifica la lista)?
+
+106
+
+¿Que direccion origen deben tener esos paquetes?
+cualquiera(any)
+
+¿Que direccion destino deben tener esos paquetes?
+172.20.41.224/28
+
